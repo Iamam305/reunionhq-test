@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="">
       <Navbar/>
-      <div className="md:px-44">
+      <div className="md:px-40 max-w-screen-2xl mx-auto">
 
       <Outlet />
       </div>

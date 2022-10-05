@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const PropertyGrid = ({ data }) => {
   return (
     <div>
-      <div className="flex flex-wrap justify-center md:justify-between items-center px-12">
+      <div className="flex flex-wrap justify-center md:justify-between items-center ">
         {data.length == 0 ? (
           <h2 className="text-center my-4 text-3xl">No Results</h2>
         ) : (
