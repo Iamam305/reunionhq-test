@@ -100,7 +100,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end hidden md:flex flex-wrap items-center justify-center ">
           <button className="btn btn-primary mr-4">
             {" "}
             <Link to={"/rent"}> Rent Property </Link>

@@ -10,7 +10,7 @@ const PropertyGrid = ({ data }) => {
         {data.length == 0 ? (
           <h2 className="text-center my-4 text-3xl">No Results</h2>
         ) : (
-          data.map((proprty) => (
+          data?.map((proprty) => (
             <Link
               to={`/${proprty.id}`}
               key={proprty.id}
@@ -18,8 +18,8 @@ const PropertyGrid = ({ data }) => {
             >
               <figure>
                 <img
-                  src={proprty.coverPhoto.url}
-                  alt="Shoes"
+                  src={proprty.coverPhoto?.url}
+                  alt="property img"
                   className="object-cover h-60 w-full"
                 />
               </figure>
@@ -28,7 +28,7 @@ const PropertyGrid = ({ data }) => {
                   $ {proprty.price} {proprty.rentFrequency}
                   <div className="badge badge-secondary">{proprty.product}</div>
                 </h2>
-                <p className=" ">{proprty.title.slice(0, 30)}...</p>
+                <p className=" ">{proprty.title?.slice(0, 30)}...</p>
 
                 <div className="card-actions justify-between text-indigo-700 ">
                   <div className="badge badge-outline  p-3">
@@ -39,7 +39,7 @@ const PropertyGrid = ({ data }) => {
                   </div>
                   <div className="badge badge-outline  p-3">
                     <AiOutlineColumnWidth className="mr-1" />{" "}
-                    {proprty.area.toString().slice(0, 5)} ft
+                    {proprty.area?.toString().slice(0, 5)} ft
                   </div>
                 </div>
               </div>
