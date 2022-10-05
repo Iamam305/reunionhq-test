@@ -2,25 +2,28 @@ import axios from "axios";
 
 
 
-export const fetchProperty = (params) => {
+export const fetchProperties = (para) => {
   return axios.request({
     method: "GET",
     url: "https://bayut.p.rapidapi.com/properties/list",
-    params,
-    // params: {
-    //   locationExternalIDs: "5002,6020",
-    //   purpose: "for-rent",
-    //   hitsPerPage: "25",
-    //   page: "0",
-    //   lang: "en",
-    //   sort: "city-level-score",
-    //   rentFrequency: "monthly",
-    //   categoryExternalID: "4",
-    //   priceMin: "10",
-    //   priceMax: "10000",
-    // },
+    params: para,
     headers: {
-      "X-RapidAPI-Key": process.env.RapidAPI_Key,
+      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
+      "X-RapidAPI-Host": "bayut.p.rapidapi.com",
+    },
+  });
+
+  
+};
+
+export const getSingleProperty = (id) => {
+  return axios.request({
+    method: "GET",
+    url: "https://bayut.p.rapidapi.com/properties/detail",
+    params: {externalID: `${id}`},
+  
+    headers: {
+      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
       "X-RapidAPI-Host": "bayut.p.rapidapi.com",
     },
   });
